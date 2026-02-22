@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>НЕ НАЖИМАЙ!!!</title>
+    <style>
+        body {
+            background: #ff0000;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        button {
+            font-size: 48px;
+            padding: 20px 40px;
+            background: yellow;
+            border: 5px solid black;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white; font-size: 72px;">⚠️ ВНИМАНИЕ! ⚠️</h1>
+    <h2 style="color: white;">НИ В КОЕМ СЛУЧАЕ НЕ НАЖИМАЙ КНОПКУ!</h2>
+    
+    <button onclick="troll()">НЕ НАЖИМАТЬ СЮДА!!!</button>
+
+    <script>
+        function troll() {
+            for (let i = 0; i < 10; i++) {
+                alert('😜 TROLOLO 😜');
+            }
+            
+            // Открываем бесконечные окна
+            let win;
+            for (let i = 0; i < 5; i++) {
+                win = window.open('', '_blank', 'width=300,height=200');
+                win.document.write(`
+                    <html>
+                        <body style="background: black; color: white; text-align: center; font-size: 30px;">
+                            <h1>😜</h1>
+                            <p>ТРОЛЛФЕЙС</p>
+                            <script>
+                                setTimeout(function() {
+                                    alert("Ты думал это конец? А вот и нет!");
+                                }, 1000);
+                            <\/script>
+                        </body>
+                    </html>
+                `);
+            }
+            
+            // Меняем фон
+            document.body.style.background = 'url("https://i.imgur.com/7YcYzZz.gif")';
+            document.body.style.backgroundSize = 'cover';
+            
+            // Добавляем троллфейсы
+            for (let i = 0; i < 50; i++) {
+                let div = document.createElement('div');
+                div.innerHTML = '😜';
+                div.style.position = 'absolute';
+                div.style.left = Math.random() * window.innerWidth + 'px';
+                div.style.top = Math.random() * window.innerHeight + 'px';
+                div.style.fontSize = '50px';
+                div.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                document.body.appendChild(div);
+            }
+        }
+    </script>
+</body>
+</html>
